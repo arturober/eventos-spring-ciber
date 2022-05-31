@@ -1,0 +1,14 @@
+spring:
+    datasource:
+        username: example
+        password: example
+        url: jdbc:mariadb://localhost:3306/gestion_eventos
+        driver-class-name: org.mariadb.jdbc.Driver
+    web:
+        resources:
+            static-locations: file:/public
+logging:
+    level:
+        org:
+            hibernate:
+                SQL: debug
