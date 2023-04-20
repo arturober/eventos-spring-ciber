@@ -6,9 +6,7 @@ import com.arturober.eventosjdbc.eventos.vistas.EventoCreador;
 
 import org.springframework.data.jdbc.repository.query.Query;
 import org.springframework.data.repository.CrudRepository;
-import org.springframework.stereotype.Repository;
 
-@Repository
 public interface EventosRepository extends CrudRepository<Evento, Integer>  {
     final static String selectSql = "SELECT e.*, c.id as c_id, c.nombre as c_nombre, c.correo as c_correo, c.avatar as c_avatar, " + 
     "EXISTS(SELECT * FROM usuario_asiste_evento WHERE usuario = :usuario AND evento = e.id) as asiste " + 
